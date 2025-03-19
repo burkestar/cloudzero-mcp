@@ -55,6 +55,19 @@ graph LR
     class D db
 ```
 
+Once the MCP server is configured in Claude Desktop, it will be launched as a background process at
+startup.  Claude Desktop as the MCP Host will send an `initiatize` request to the MCP Server. The
+server responds with its [capabilities](https://spec.modelcontextprotocol.io/specification/2024-11-05/basic/lifecycle/#capability-negotiation), which includes `prompts` and `tools` for tool calling.
+
+The server implements several tools specific to CloudZero:
+
+- `get_costs` to get billing data from `start_date` to `end_date`
+- `get_dimensions` for billing dimensions
+- `list_budgets` to list budgets
+- `list_insights` to list insights
+
+The MCP protocol uses JSON-RPC 2.0 for requests and responses.
+
 ## Setup
 
 Install [Claude Desktop](https://claude.ai/download):
