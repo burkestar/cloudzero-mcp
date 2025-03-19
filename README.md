@@ -12,6 +12,7 @@ Uses [CloudZero v2 API](https://docs.cloudzero.com/reference/introduction) and t
 
 ```mermaid
 graph LR
+    %%{init: {'theme':'neutral'}}%%
     %% Define nodes
     A[MCP Host]
     B[Local MCP Server]
